@@ -26,14 +26,14 @@ while true; do
 
 	clear
 	cat <<EOF
-${GREEN}   +---+ ${BLUE}   +---+ ${YELLOW}   +---+${NC}
-${GREEN}  /   /| ${BLUE}  /   /| ${YELLOW}  /   /|${NC}
-${GREEN} /   / | ${BLUE} /   / | ${YELLOW} /   / |${NC}
-${GREEN}+---+  | ${BLUE}+---+  | ${YELLOW}+---+  |${NC}
-${GREEN}|   |  + ${BLUE}|   |  + ${YELLOW}|   |  +${NC}
-${GREEN}|   | /  ${BLUE}|   | /  ${YELLOW}|   | / ${NC}
-${GREEN}|   |/   ${BLUE}|   |/   ${YELLOW}|   |/  ${NC}
-${GREEN}+---+    ${BLUE}+---+    ${YELLOW}+---+   ${NC}
+${GREEN}   +-----+ ${BLUE}   +-----+ ${YELLOW}   +-----+${NC}
+${GREEN}  /     /| ${BLUE}  /     /| ${YELLOW}  /     /|${NC}
+${GREEN} /     / | ${BLUE} /     / | ${YELLOW} /     / |${NC}
+${GREEN}+-----+  | ${BLUE}+-----+  | ${YELLOW}+-----+  |${NC}
+${GREEN}|     |  + ${BLUE}|     |  + ${YELLOW}|     |  +${NC}
+${GREEN}|     | /  ${BLUE}|     | /  ${YELLOW}|     | / ${NC}
+${GREEN}|     |/   ${BLUE}|     |/   ${YELLOW}|     |/  ${NC}
+${GREEN}+-----+    ${BLUE}+-----+    ${YELLOW}+-----+   ${NC}
 
   CPU:        $CPU_LOAD%
   Memory:     $RAM_USED/${TOTAL_MEM}MB $RAM_PERCENT%
