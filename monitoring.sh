@@ -1,13 +1,9 @@
 #!/bin/bash
 
-RED=$(tput setaf 1)
-GREEN=$(tput setaf 2)
-YELLOW=$(tput setaf 3)
-BLUE=$(tput setaf 4)
 PURPLE=$(tput setaf 5)
 NC=$(tput sgr0)
 
-printf "${PURPLE}Starting...${NC}\n"
+echo "${PURPLE}Starting...${NC}"
 
 trap "tput cnorm; exit" SIGINT SIGTERM
 tput civis
@@ -26,20 +22,17 @@ while true; do
 
 	clear
 	cat <<EOF
-${GREEN}   +-----+ ${BLUE}   +-----+ ${YELLOW}   +-----+${NC}
-${GREEN}  /     /| ${BLUE}  /     /| ${YELLOW}  /     /|${NC}
-${GREEN} /     / | ${BLUE} /     / | ${YELLOW} /     / |${NC}
-${GREEN}+-----+  | ${BLUE}+-----+  | ${YELLOW}+-----+  |${NC}
-${GREEN}|     |  + ${BLUE}|     |  + ${YELLOW}|     |  +${NC}
-${GREEN}|     | /  ${BLUE}|     | /  ${YELLOW}|     | / ${NC}
-${GREEN}|     |/   ${BLUE}|     |/   ${YELLOW}|     |/  ${NC}
-${GREEN}+-----+    ${BLUE}+-----+    ${YELLOW}+-----+   ${NC}
+${PURPLE}   ___     ___
+  /\\__\\   /\\__\\
+ /:/  /  /::L_L_
+/:/__/  /:/L:\\__\\
+\\:\\  \\  \\/_/:/  /
+ \\:\\__\\   /:/  /
+  \\/__/   \\/__/  ${NC}v1.0
 
   CPU:        $CPU_LOAD%
   Memory:     $RAM_USED/${TOTAL_MEM}MB $RAM_PERCENT%
   Last boot:  $BOOT_TIME $BOOT_DATE
-
-${RED}Ctrl+C to quit${NC}
 EOF
 	sleep 1
 done
