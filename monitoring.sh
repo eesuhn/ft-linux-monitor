@@ -11,7 +11,23 @@ tput civis
 read BOOT_TIME BOOT_DATE <<< "$(who -b | awk '{print $4, $3}')"
 TOTAL_MEM=$(awk '/MemTotal/ {printf "%.0f", ($2 / 1024)}' /proc/meminfo)
 
+if [ $# -eq 1 ]; then
+	DURATION=$1
+else
+	DURATION=-1
+fi
+
+start_time=$(date +%s)
+
 while true; do
+	if [ $DURATION -ne -1 ]; then
+		CURRENT=$(date +%s)
+		ELAPSED=$((CURRENT - start_time))
+		if [ $ELAPSED -ge $DURATION ]; then
+			break
+		fi
+	fi
+
 	# CPU
 	CPU_LOAD=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1}')
 
@@ -36,3 +52,6 @@ ${PURPLE}   ___     ___
 EOF
 	sleep 1
 done
+
+tput cnorm
+echo "${PURPLE}Stopped...${NC}"
