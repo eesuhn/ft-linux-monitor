@@ -16,6 +16,6 @@ A command-line tool that displays real-time system information for your Linux
 
 #### Usage
 ```sh
-lm
+lm <duration>
 ```
-> `Ctrl+C` to exit the monitoring tool
+> `<duration>` is optional. Specify the number of <b>seconds</b> to run the monitor. If no duration is provided, it will run until `Ctrl+C` is pressed.
