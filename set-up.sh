@@ -21,7 +21,7 @@ fi
 cat <<EOF >> /home/$USER/.bashrc
 
 # Linux Monitor
-alias lm='bash /home/$USER/.linux-monitor/monitoring.sh'
+alias lm='bash /home/$USER/.ft-linux-monitor/monitoring.sh'
 EOF
 
 source /home/$USER/.bashrc

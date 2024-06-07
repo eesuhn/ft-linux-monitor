@@ -8,7 +8,6 @@ echo "${PURPLE}Starting...${NC}"
 trap "tput cnorm; exit" SIGINT SIGTERM
 tput civis
 
-read BOOT_TIME BOOT_DATE <<< "$(who -b | awk '{print $4, $3}')"
 TOTAL_MEM=$(awk '/MemTotal/ {printf "%.0f", ($2 / 1024)}' /proc/meminfo)
 
 if [ $# -eq 1 ]; then
@@ -48,7 +47,6 @@ ${PURPLE}   ___     ___
 
   CPU:        $CPU_LOAD%
   Memory:     $RAM_USED/${TOTAL_MEM}MB $RAM_PERCENT%
-  Last boot:  $BOOT_TIME $BOOT_DATE
 EOF
 	sleep 1
 done
