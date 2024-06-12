@@ -12,7 +12,7 @@ if grep -q "alias lm" $HOME/.bashrc; then
 /:/__/  /:/L:\\__\\
 \\:\\  \\  \\/_/:/  /
  \\:\\__\\   /:/  /
-  \\/__/   \\/__/  v1.0
+  \\/__/   \\/__/  v2.0
 ${RED}Error${NC}: alias lm already exists in .bashrc
 EOF
 	return 1
@@ -32,7 +32,7 @@ cat <<EOF
 /:/__/  /:/L:\\__\\
 \\:\\  \\  \\/_/:/  /
  \\:\\__\\   /:/  /
-  \\/__/   \\/__/  v1.0
+  \\/__/   \\/__/  v2.0
 ${GREEN}Success${NC}: alias lm added to .bashrc
 EOF
 return 0

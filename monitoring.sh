@@ -31,19 +31,20 @@ while true; do
 	CPU_LOAD=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1}')
 
 	# RAM
-	RAM_USED=$(awk '/MemFree/ {printf "%.0f", ($2 / 1024)}' /proc/meminfo)
-	RAM_USED=$((TOTAL_MEM - RAM_USED))
+	MEM_FREE=$(awk '/MemFree/ {printf "%.0f", ($2 / 1024)}' /proc/meminfo)
+	BUFFERS=$(awk '/Buffers/ {printf "%.0f", ($2 / 1024)}' /proc/meminfo)
+	CACHED=$(awk '/^Cached/ {printf "%.0f", ($2 / 1024)}' /proc/meminfo)
+	MEM_AVAILABLE=$((MEM_FREE + BUFFERS + CACHED))
+	RAM_USED=$((TOTAL_MEM - MEM_AVAILABLE))
 	RAM_PERCENT=$((RAM_USED * 100 / TOTAL_MEM))
 
 	clear
 	cat <<EOF
-${PURPLE}   ___     ___
-  /\\__\\   /\\__\\
- /:/  /  /::L_L_
-/:/__/  /:/L:\\__\\
-\\:\\  \\  \\/_/:/  /
- \\:\\__\\   /:/  /
-  \\/__/   \\/__/  ${NC}v1.0
+${PURPLE} ▄       ▄
+▄ ▀▄   ▄▀ ▄
+█▄█▀███▀█▄█
+▀█████████▀
+ ▄▀     ▀▄   ${NC}v2.0
 
   CPU:        $CPU_LOAD%
   Memory:     $RAM_USED/${TOTAL_MEM}MB $RAM_PERCENT%
