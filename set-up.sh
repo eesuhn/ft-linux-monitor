@@ -4,7 +4,7 @@ RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
 NC=$(tput sgr0)
 
-if grep -q "alias lm" /home/$USER/.bashrc; then
+if grep -q "alias lm" $HOME/.bashrc; then
 	cat <<EOF
    ___     ___
   /\\__\\   /\\__\\
@@ -18,13 +18,13 @@ EOF
 	return 1
 fi
 
-cat <<EOF >> /home/$USER/.bashrc
+cat <<EOF >> $HOME/.bashrc
 
 # Linux Monitor
-alias lm='bash /home/$USER/.ft-linux-monitor/monitoring.sh'
+alias lm='bash $HOME/.ft-linux-monitor/monitoring.sh'
 EOF
 
-source /home/$USER/.bashrc
+source $HOME/.bashrc
 cat <<EOF
    ___     ___
   /\\__\\   /\\__\\

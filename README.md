@@ -7,11 +7,11 @@ A command-line tool that displays real-time system information for your Linux
 #### Installation
 1. Clone in root:
 	```sh
-	git clone https://github.com/eesuhn/ft-linux-monitor.git ~/.ft-linux-monitor
+	git clone https://github.com/eesuhn/ft-linux-monitor.git $HOME/.ft-linux-monitor
 	```
 2. Run set-up script:
 	```sh
-	source ~/.ft-linux-monitor/set-up.sh
+	source $HOME/.ft-linux-monitor/set-up.sh
 	```
 
 #### Usage
