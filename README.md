@@ -2,7 +2,7 @@
 
 A command-line tool that displays real-time system information for your Linux
 
-<img src="https://github.com/eesuhn/ft-linux-monitor/assets/102596628/4d6cf1f1-5785-49d6-a889-4e9984cc928b" alt="screenshot" width="220" />
+<img src="https://github.com/eesuhn/ft-linux-monitor/assets/102596628/f81367c8-50d4-4466-afee-266cc7967344" alt="screenshot" width="220" />
 
 #### Installation
 1. Clone in root:
